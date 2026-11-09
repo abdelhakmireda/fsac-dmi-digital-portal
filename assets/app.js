@@ -1,10 +1,23 @@
-import './stimulus_bootstrap.js';
-/*
- * Welcome to your app's main JavaScript file!
- *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
- */
-import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+import './stimulus_bootstrap.js';
+import './styles/app.css';
+import './styles/pages/loading.css';
+
+// Barre de chargement
+const bar = document.querySelector('[data-loading-bar]');
+const percent = document.querySelector('[data-loading-percent]');
+
+if (bar && percent) {
+    const timer = setInterval(() => {
+        bar.value += 1;
+        percent.textContent = `${bar.value}%`;
+
+        if (bar.value >= 100) clearInterval(timer);
+    }, 30);
+}
+
+// Thème clair / sombre
+document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+    const html = document.documentElement;
+    html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+});

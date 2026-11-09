@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FSAC | DMI Digital{% endblock %}
+
+{% block body %}
+<section class="fsac-loading-page">
+        <button type="button" data-theme-toggle>
+            Changer le thème
+        </button>
+        <section class="fsac-loader__content">
+            <img class="fsac-loader__logo" src="images/logo-fsac-officiel.svg"
+                alt="Logo de la Faculté des Sciences Aïn Chock">
+
+            <h1 class="fsac-loader__title">
+                D<span>M</span>I
+            </h1>
+
+            <p class="fsac-loader__subtitle">
+                Département de Mathématiques et Informatique
+            </p>
+            <section class="fsac-loader__progress">
+                <progress class="fsac-loader__bar" value="0" max="100" data-loading-bar>0%</progress>
+
+                <div class="fsac-loader__meta">
+                    <span data-loading-label>CHARGEMENT</span>
+                    <output data-loading-percent>0%</output>
+                </div>
+            </section>
+        </section>
+{% endblock %}

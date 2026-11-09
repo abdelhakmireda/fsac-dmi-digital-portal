@@ -1,3 +1,147 @@
+:root {
+    --background: radial-gradient(circle, #ffffffcc, #e7f0fb);
+    --reflection: #1765b326;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --border-color: #dce5f1;
+
+    --font-family: Arial, sans-serif;
+    --font-color: #0a4a7a;
+    --font-seconde: #64748b;
+
+    --font-title: clamp(28px, 5vw, 48px);
+    --font-subtitle: clamp(20px, 3vw, 28px);
+    --font-description: clamp(14px, 1.5vw, 16px);
+
+    --button-bg: #1765b3;
+    --button-color: #ffffff;
+    --button-hover: #104e8b;
+
+    /* Messages : erreur  succès  attente information*/
+    --error-bg: #f9d2da;
+    --error-color: #e11d48;
+
+    --success-bg: #cff1e6;
+    --success-color: #2f855a;
+
+
+    --pending-bg: #fff1d4;
+    --pending-color: #9a6500;
+
+    --info-bg: #dbeafe;
+    --info-color: #1d4ed8;
+
+    --neutral-bg: #e9edf3;
+    --neutral-color: #475569;
+
+    /* Dimensions communes */
+    --radius: 5%;
+    --padding: 10%;
+    --transition: 0.3s;
+
+    --shadow: 0 10px 40px #0000002f;
+}
+
+/* Mode sombre */
+[data-theme="dark"] {
+    --background: radial-gradient(circle, #152e4b, #071426);
+    --reflection: #57a6ff35;
+    --card-bg: #10223b;
+    --input-bg: #152b45;
+    --border-color: #2d4561;
+
+    --font-color: #e9f1ff;
+    --font-seconde: #a2b4cb;
+
+    --button-bg: #287bc9;
+    --button-hover: #4393df;
+    --shadow: 0 10px 40px #fafafa21;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principale);
+}
+
 body {
-    background-color: skyblue;
+    min-height: 100vh;
+    color: var(--font-color);
+    background: linear-gradient(300deg, transparent 35%, var(--reflection) 50%, transparent 55%), var(--background);
+    background-size: 220% 100%, cover;
+    background-position: 150% center, center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: reflection 4s ease-in-out infinite;
+}
+
+
+/* ===== ANIMATIONS GLOBALES ===== */
+
+/* Reflet du background */
+@keyframes reflection {
+
+    0%,
+    15% {
+        background-position: 150% center, center;
+    }
+
+    85%,
+    100% {
+        background-position: -150% center, center;
+    }
+}
+
+/* Apparition des éléments */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mouvement des dégradés */
+@keyframes gradient {
+    to {
+        background-position: 200% 0;
+    }
+}
+
+/* Accessibilité */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+[data-theme-toggle] {
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    padding: 10px 15px;
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
 }
