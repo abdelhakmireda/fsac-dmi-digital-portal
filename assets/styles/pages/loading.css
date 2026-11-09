@@ -1,0 +1,85 @@
+
+.fsac-loading-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.fsac-loader__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.fsac-loader__logo {
+    width: 30%;
+    border-radius: 5%;
+    animation: appear 1s both;
+}
+
+.fsac-loader__title {
+    font-size: calc(var(--font-title) * 2);
+    line-height: 1;
+    color: var(--font-color);
+    animation: appear 1s .2s both;
+}
+
+.fsac-loader__title span {
+    color: var(--font-seconde);
+}
+
+.fsac-loader__subtitle {
+    font-size: calc(var(--font-title) * 0.8);
+    font-size: var(--font-subtitle);
+    color: var(--font-seconde);
+    animation: appear 1s .4s both;
+}
+
+.fsac-loader__progress {
+    width: min(80%, 420px);
+    margin-top: 3vh;
+    animation: appear 1s .6s both;
+}
+
+.fsac-loader__bar {
+    width: 100%;
+    appearance: none;
+    border: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+}
+
+.fsac-loader__bar::-webkit-progress-bar {
+    background: var(--border-color);
+}
+
+.fsac-loader__bar::-webkit-progress-value {
+    background: linear-gradient(90deg,
+        var(--button-bg),
+        var(--font-seconde),
+        var(--button-bg));
+    background-size: 200% 100%;
+    animation: gradient 2s linear infinite;
+}
+
+.fsac-loader__bar::-moz-progress-bar {
+    background: var(--button-bg);
+}
+
+.fsac-loader__meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: var(--font-description);
+}
+
+@media (max-width: 768px) {
+    .fsac-loader__logo {
+        width: 65%;
+    }
+}
