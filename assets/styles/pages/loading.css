@@ -9,23 +9,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2vh;
-    width: 90%;
+    gap: 1vh;
     margin: auto;
     text-align: center;
 }
 
 .fsac-loader__logo {
     width: 30%;
-    border-radius: 5%;
-    animation: appear 1s both;
 }
 
 .fsac-loader__title {
-    font-size: calc(var(--font-title) * 2);
-    line-height: 1;
+    font-size: calc(var(--font-title) * 3);
+    line-height: .87;
+    font-weight: 900;
     color: var(--font-color);
-    animation: appear 1s .2s both;
+    animation: appear 1s .3s both;
 }
 
 .fsac-loader__title span {
@@ -47,8 +45,6 @@
 
 .fsac-loader__bar {
     width: 100%;
-    appearance: none;
-    border: 0;
     border-radius: 10px;
     overflow: hidden;
     height: 8px;
@@ -58,23 +54,16 @@
     background: var(--border-color);
 }
 
+
 .fsac-loader__bar::-webkit-progress-value {
-    background: linear-gradient(90deg,
-        var(--button-bg),
-        var(--font-seconde),
-        var(--button-bg));
+    background: var(--button-bg);
     background-size: 200% 100%;
-    animation: gradient 2s linear infinite;
 }
 
-.fsac-loader__bar::-moz-progress-bar {
-    background: var(--button-bg);
-}
 
 .fsac-loader__meta {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
     font-size: var(--font-description);
 }
 

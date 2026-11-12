@@ -1,19 +1,23 @@
 :root {
     --background: radial-gradient(circle, #ffffffcc, #e7f0fb);
     --reflection: #1765b326;
-    --card-bg: #ffffff;
+    --card-bg: rgba(255, 255, 255, .75);
     --input-bg: #ffffff;
     --border-color: #dce5f1;
+    --image--bg: #fcfcfc;
 
-    --font-family: Arial, sans-serif;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
     --font-color: #0a4a7a;
     --font-seconde: #64748b;
+    --font-title-span: #8364e9;
 
     --font-title: clamp(28px, 5vw, 48px);
     --font-subtitle: clamp(20px, 3vw, 28px);
     --font-description: clamp(14px, 1.5vw, 16px);
 
-    --button-bg: #1765b3;
+    --button-bg: linear-gradient(135deg, #3b66e9, #634cdb);
+    --button-hover: linear-gradient(135deg, #3055c9, #5037c5);
     --button-color: #ffffff;
     --button-hover: #104e8b;
 
@@ -39,23 +43,39 @@
     --padding: 10%;
     --transition: 0.3s;
 
-    --shadow: 0 10px 40px #0000002f;
+    --shadow: 0 24px 64px rgba(29, 56, 110, .095);
+    --bg-art: url('../images/background-fsac-light.svg');
+    --bg-art-opacity: .28;
 }
 
 /* Mode sombre */
 [data-theme="dark"] {
-    --background: radial-gradient(circle, #152e4b, #071426);
+    --background: radial-gradient(circle, #0f1b2a, #0f1b2a);
+    --button-bg: linear-gradient(135deg, #287bc9, #634cdb);
+    --button-hover: linear-gradient(135deg, #4393df, #785de9);
     --reflection: #57a6ff35;
-    --card-bg: #10223b;
+    --card-bg: rgba(21, 34, 63, .80);
     --input-bg: #152b45;
     --border-color: #2d4561;
 
-    --font-color: #e9f1ff;
+    --font-color: #64bafbf7;
     --font-seconde: #a2b4cb;
+    --shadow: 0 24px 70px rgba(0, 0, 0, .23);
+    --bg-art: url('../images/background-fsac-dark.svg');
+    --bg-art-opacity: .30;
+}
 
-    --button-bg: #287bc9;
-    --button-hover: #4393df;
-    --shadow: 0 10px 40px #fafafa21;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 92px;
 }
 
 a {
@@ -67,16 +87,22 @@ li {
     list-style: none;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-principale);
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
 body {
+    margin: 0;
+    justify-content: center;
     min-height: 100vh;
+    display: flex;
+    isolation: isolate;
     color: var(--font-color);
+    font: 16px/1.55 var(--font-family);
+    -webkit-font-smoothing: antialiased;
     background: linear-gradient(300deg, transparent 35%, var(--reflection) 50%, transparent 55%), var(--background);
     background-size: 220% 100%, cover;
     background-position: 150% center, center;
@@ -85,8 +111,16 @@ body {
     animation: reflection 4s ease-in-out infinite;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--bg-art) center / cover no-repeat;
+    opacity: var(--bg-art-opacity);
+    pointer-events: none;
+    z-index: -1;
+}
 
-/* ===== ANIMATIONS GLOBALES ===== */
 
 /* Reflet du background */
 @keyframes reflection {
@@ -124,6 +158,9 @@ body {
 
 /* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
@@ -132,7 +169,6 @@ body {
         transition: none !important;
     }
 }
-
 
 [data-theme-toggle] {
     position: fixed;
@@ -144,4 +180,17 @@ body {
     border: 0;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.fsac-loader__logo,
+.img.avatar-header {
+    border-radius: 5%;
+    animation: appear 1s both;
+    background: var(--image--bg);
+    padding: 1%;
 }
