@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc" style="display:block;width:100%;height:100%;max-width:none">
+  <title id="title">FSAC DMI — fond académique numérique vectoriel clair</title>
+  <desc id="desc">Bâtiment FSAC moderne avec mathématiques, informatique, algorithmes et circuits, entièrement dessiné en SVG.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#081722"/><stop offset="1" stop-color="#06131e"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#17364b" stop-opacity=".58"/><stop offset="1" stop-color="#0a1c29" stop-opacity="0"/></radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17364b" stop-opacity=".34"/><stop offset="1" stop-color="#d8e8f1" stop-opacity=".08"/></linearGradient>
+    <pattern id="dots" width="17" height="17" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#3789b8" opacity=".58"/></pattern>
+    <pattern id="mesh" width="24" height="21" patternUnits="userSpaceOnUse"><path d="M0 10.5 6 0h12l6 10.5L18 21H6Z" fill="none" stroke="#557d94" stroke-width=".7" opacity=".6"/><path d="M6 0 18 21M18 0 6 21" stroke="#60869c" stroke-width=".45"/></pattern>
+    <pattern id="arabesque" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M11 0 22 11 11 22 0 11ZM11 4 18 11 11 18 4 11Z" fill="none" stroke="#567f98" stroke-width=".65"/><circle cx="11" cy="11" r="2.7" fill="none" stroke="#6d91a6" stroke-width=".55"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4380a3"/></marker>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+
+    <g id="win" fill="url(#glass)" stroke="#567f98" stroke-width=".8"><rect width="35" height="39"/><path d="M17.5 0v39M0 19.5h35" opacity=".62"/></g>
+    <g id="palm" fill="none" stroke="#527d96" stroke-linecap="round"><path d="M0 140C4 106 4 68 0 26" stroke-width="1.7"/><path d="M0 28C-24 7-51 6-72 18M0 28C-22-1-42-10-60-6M0 28C-6-3 0-22 10-38M0 28C20-2 43-13 63-8M0 28C27 11 54 13 73 27M0 28C-29 24-51 35-66 51M0 28C23 27 45 39 60 57" stroke-width="1.1"/></g>
+    <g id="shrub" fill="none" stroke="#527c95" stroke-width=".8"><path d="M0 25C4 6 17-3 29 8 35-6 51-4 55 11 69 7 79 18 75 30H0Z"/><path d="M11 24c2-8 7-12 14-16m8 17c1-8 6-14 13-19m10 21c2-7 7-11 12-13"/></g>
+    <g id="smallNode"><circle r="3" fill="#56b4df" filter="url(#glow)"/><circle r="1" fill="#fff"/></g>
+    <style>
+      #building-lines{animation:buildingDrift 13s ease-in-out infinite;transform-origin:960px 690px}
+      #fsac-sign{stroke:#7692aa;stroke-width:.65;paint-order:stroke fill;stroke-dasharray:230;animation:writeFsac 3.2s ease-in-out infinite}
+      @keyframes buildingDrift{0%,100%{transform:translate(0,0)}50%{transform:translate(1.5px,-2px)}}
+      @keyframes writeFsac{0%{stroke-dashoffset:230;fill-opacity:.18}38%,72%{stroke-dashoffset:0;fill-opacity:1}100%{stroke-dashoffset:-230;fill-opacity:.18}}
+      @media(prefers-reduced-motion:reduce){#building-lines,#fsac-sign{animation:none}}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#paper)"/>
+  <ellipse cx="960" cy="610" rx="690" ry="330" fill="url(#halo)" filter="url(#soft)"/>
+
+  <!-- CIRCUITS ET POINTS -->
+  <g fill="none" stroke="#3c7696" stroke-width="1" opacity=".44">
+    <path d="M0 78h28l30 30v72M0 104h17l27 27v95M0 140h8l23 23v116M1920 80h-30l-28 28v72M1920 112h-18l-27 27v95M1920 151h-9l-23 23v116"/>
+    <path d="M0 684h22l35 35v217l28 28h125M0 733h11l30 30v217l23 23h147M1920 678h-22l-36 36v216l-29 29h-121M1920 729h-12l-29 29v217l-24 23h-145"/>
+    <path d="M460 38h135l22 22h66M1250 38h135l-22 22h-66"/>
+  </g>
+  <g><use href="#smallNode" x="58" y="180"/><use href="#smallNode" x="44" y="226"/><use href="#smallNode" x="1862" y="180"/><use href="#smallNode" x="1875" y="234"/><use href="#smallNode" x="57" y="719"/><use href="#smallNode" x="64" y="1003"/><use href="#smallNode" x="1862" y="714"/><use href="#smallNode" x="1855" y="998"/><use href="#smallNode" x="617" y="60"/><use href="#smallNode" x="1303" y="60"/></g>
+  <g opacity=".55"><rect x="450" y="18" width="170" height="70" fill="url(#dots)"/><rect x="1298" y="18" width="170" height="70" fill="url(#dots)"/><rect x="35" y="310" width="80" height="180" fill="url(#dots)"/><rect x="1805" y="270" width="92" height="180" fill="url(#dots)"/><rect x="238" y="1000" width="220" height="78" fill="url(#dots)"/><rect x="1590" y="990" width="250" height="88" fill="url(#dots)"/></g>
+
+  <!-- EN-TÊTES -->
+  <g fill="#819ab2">
+    <text x="82" y="92" font-family="Georgia,'Times New Roman',serif" font-size="70">FSAC</text>
+    <text x="83" y="126" font-family="Arial,sans-serif" font-size="17">FACULTÉ DES SCIENCES AÏN CHOCK</text>
+    <text x="83" y="154" font-family="Arial,sans-serif" font-size="17">UNIVERSITÉ HASSAN II · CASABLANCA</text>
+    <text x="960" y="93" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" letter-spacing="9">INNOVATION · DIGITALISATION</text>
+    <text x="1818" y="92" text-anchor="end" font-family="Georgia,'Times New Roman',serif" font-size="70">DMI</text>
+    <text x="1818" y="126" text-anchor="end" font-family="Arial,sans-serif" font-size="17">DÉPARTEMENT</text>
+    <text x="1818" y="154" text-anchor="end" font-family="Arial,sans-serif" font-size="17">MATHÉMATIQUES &amp; INFORMATIQUE</text>
+  </g>
+
+  <!-- MATHÉMATIQUES À GAUCHE -->
+  <g fill="#5e8097" font-family="Georgia,'Times New Roman',serif" font-style="italic" opacity=".74">
+    <text x="95" y="240" font-size="20">f(x) = ∫ₐˣ f(t)dt</text>
+    <text x="95" y="297" font-size="20">d/dx f(x) = limₕ→₀ [f(x+h)−f(x)] / h</text>
+    <text x="95" y="357" font-size="20">∇f(u,v,w) = (∂f/∂x, ∂f/∂y, ∂f/∂z)</text>
+    <text x="95" y="417" font-size="20">∇²u = ∂²u/∂x² + ∂²u/∂y² + ∂²u/∂z²</text>
+    <text x="225" y="491" font-size="18">sin² θ + cos² θ = 1</text><text x="225" y="529" font-size="18">eⁱᶿ = cos θ + i sin θ</text>
+    <text x="290" y="589" font-size="22">∑ⁿₖ₌₀ k = n(n+1)/2</text>
+    <text x="92" y="680" font-size="19">A = [ a₁₁  a₁₂  ⋯  a₁ₙ ]   Ax = b</text>
+    <text x="92" y="781" font-size="19">det(A) = | a₁₁  a₁₂  ⋯  a₁ₙ |</text>
+    <text x="92" y="856" font-size="20">P(A∪B) = P(A) + P(B) − P(A∩B)</text>
+    <text x="92" y="902" font-size="20">P(A|B) = P(A∩B) / P(B)</text>
+  </g>
+  <g fill="none" stroke="#668ba1" stroke-width="1" opacity=".64">
+    <!-- cercle trigonométrique -->
+    <circle cx="170" cy="531" r="59"/><path d="M90 531h160M170 451v160M170 531l40-40M208 493a55 55 0 0 1 16 38"/>
+    <text x="184" y="523" fill="#668ba1" stroke="none" font-family="Georgia,serif" font-size="17">θ</text>
+    <!-- cloche gaussienne -->
+    <path d="M280 963h260M305 963C360 962 363 877 408 877s48 85 108 86"/><path d="M360 963v-12m48 12v-12m48 12v-12"/>
+    <!-- surface 3D -->
+    <g transform="translate(355 245) skewX(-13) scale(.72)">
+      <path d="M0 160h260M0 160 80 0M260 160 80 0"/>
+      <path d="M22 153C43 112 53 46 80 20s48 63 70 82 55 17 87 49M10 142c30-28 48-92 74-103s46 65 74 77 50 9 86 31M0 128c29-13 54-67 82-72s48 61 78 69 57 1 91 14"/>
+      <path d="M31 149 95 12M63 151 116 28M96 153 140 49M130 155 166 69M164 157 192 92M199 159 220 119" opacity=".65"/>
+    </g>
+  </g>
+
+  <!-- ALGORITHMES À DROITE -->
+  <g fill="none" stroke="#63869c" stroke-width="1.15" opacity=".76">
+    <!-- flowchart -->
+    <rect x="1400" y="185" width="98" height="32" rx="16"/><rect x="1396" y="237" width="106" height="34"/><path d="M1449 271l57 48-57 48-57-48Z"/><rect x="1396" y="387" width="110" height="36"/><path d="M1449 423l57 47-57 47-57-47Z"/><rect x="1402" y="537" width="100" height="32" rx="16"/>
+    <path d="M1449 217v20M1449 367v20M1449 423v-18M1449 517v20M1506 319h50l20 20v128l-20 20h-50M1506 470h39l18-18v-29" marker-end="url(#arrow)"/>
+    <!-- arbre -->
+    <circle cx="1708" cy="214" r="15"/><circle cx="1656" cy="275" r="15"/><circle cx="1760" cy="275" r="15"/><circle cx="1625" cy="336" r="15"/><circle cx="1687" cy="336" r="15"/><circle cx="1729" cy="336" r="15"/><circle cx="1791" cy="336" r="15"/><path d="M1700 226l-35 37m51-37 35 37m-88 25-29 35m31-35 15 35m73-35-17 35m25-35 25 35"/>
+  </g>
+  <g fill="#62849a" font-family="Arial,sans-serif" font-size="13" text-anchor="middle"><text x="1449" y="206">START</text><text x="1449" y="259">INPUT</text><text x="1449" y="324">VALID ?</text><text x="1449" y="410">PROCESS</text><text x="1449" y="475">DONE ?</text><text x="1452" y="558">END</text><text x="1708" y="219">1</text><text x="1656" y="280">2</text><text x="1760" y="280">3</text><text x="1625" y="341">4</text><text x="1687" y="341">5</text><text x="1729" y="341">6</text><text x="1791" y="341">7</text></g>
+  <g fill="#5e7e94" font-family="Consolas,'Courier New',monospace" font-size="12.5" opacity=".85">
+    <text x="1594" y="382">Algorithm Factoriel(n)</text><text x="1594" y="402">Input: n ∈ N</text><text x="1594" y="422">Output: n!</text><text x="1594" y="442">fact ← 1</text><text x="1594" y="462">for i ← 2 to n do</text><text x="1594" y="482">  fact ← fact × i</text><text x="1594" y="502">end for</text><text x="1594" y="522">return fact</text><text x="1594" y="560">Search: O(n)</text><text x="1594" y="580">Sort: O(n log n)</text><text x="1594" y="600">Space: O(n)</text>
+  </g>
+
+  <!-- BÂTIMENT FSAC -->
+  <g id="building-lines" fill="none" stroke="#5b839b" stroke-linejoin="round" stroke-linecap="round">
+    <!-- ailes -->
+    <g fill="url(#glass)" stroke-width="1">
+      <path d="M440 837V646l93-74h126v265ZM1480 837V646l-93-74h-126v265Z"/>
+      <path d="M440 646h219M1480 646h-219M458 620h201M1462 620h-201M440 698h219M440 751h219M440 804h219M1480 698h-219M1480 751h-219M1480 804h-219"/>
+      <path d="M475 619v218M535 573v264M596 573v264M1445 619v218M1385 573v264M1324 573v264" opacity=".65"/>
+    </g>
+    <!-- tours -->
+    <g fill="url(#glass)" stroke-width="1.2">
+      <path d="M598 837V486h144v351ZM1322 837V486h-144v351Z"/>
+      <path d="M565 486h177l-48-76H565l-33 11ZM1355 486h-177l48-76h129l33 11Z"/>
+      <path d="M565 410h129l48 76M1355 410h-129l-48 76M598 486h144M1322 486h-144"/>
+      <path d="M610 486v351M632 486v351M708 486v351M730 486v351M1310 486v351M1288 486v351M1212 486v351M1190 486v351" opacity=".62"/>
+      <rect x="640" y="521" width="48" height="226" fill="url(#arabesque)"/><rect x="1232" y="521" width="48" height="226" fill="url(#arabesque)"/>
+      <path d="M633 514h62v240h-62ZM1225 514h62v240h-62Z"/>
+    </g>
+    <!-- centre -->
+    <g fill="url(#glass)" stroke-width="1.2">
+      <path d="M742 837V558h436v279Z"/>
+      <path d="M780 486h360l-45 96H825Z" fill="url(#mesh)"/>
+      <path d="M780 486h360l-30-24H810Z"/><path d="M825 582l-45-96M1095 582l45-96"/>
+      <path d="M760 558v279M800 558v279M1120 558v279M1160 558v279" opacity=".6"/>
+      <rect x="855" y="594" width="210" height="104"/><rect x="870" y="607" width="180" height="78" fill="#0b1d2a" fill-opacity=".42"/>
+      <path d="M890 837V706h140v131M910 837V727h100v110M930 837v-87h60v87M960 706v131M910 774h100M930 797h60"/>
+      <path d="M890 706h140l23 21H867Z"/>
+    </g>
+    <!-- fenêtres -->
+    <g opacity=".78"><use href="#win" x="466" y="661"/><use href="#win" x="522" y="661"/><use href="#win" x="578" y="661"/><use href="#win" x="466" y="716"/><use href="#win" x="522" y="716"/><use href="#win" x="578" y="716"/><use href="#win" x="466" y="771"/><use href="#win" x="522" y="771"/><use href="#win" x="578" y="771"/><use href="#win" x="1419" y="661"/><use href="#win" x="1363" y="661"/><use href="#win" x="1307" y="661"/><use href="#win" x="1419" y="716"/><use href="#win" x="1363" y="716"/><use href="#win" x="1307" y="716"/><use href="#win" x="1419" y="771"/><use href="#win" x="1363" y="771"/><use href="#win" x="1307" y="771"/><use href="#win" x="765" y="615"/><use href="#win" x="765" y="675"/><use href="#win" x="765" y="735"/><use href="#win" x="1120" y="615"/><use href="#win" x="1120" y="675"/><use href="#win" x="1120" y="735"/></g>
+    <!-- enseigne -->
+    <g fill="#7692aa" stroke="none" text-anchor="middle"><text id="fsac-sign" x="960" y="645" font-family="Georgia,'Times New Roman',serif" font-size="42" letter-spacing="7">FSAC</text><text x="960" y="676" font-family="Arial,sans-serif" font-size="15" direction="rtl">كلية العلوم عين الشق</text></g>
+    <!-- marches -->
+    <g stroke-width="1"><path d="M856 837h208l23 18H833Z"/><path d="M833 855h254l25 18H808Z"/><path d="M808 873h304l29 19H779Z"/><path d="M779 892h362l38 22H741Z"/><path d="M815 837l-51 56-25 2 63-72M1105 837l51 56 25 2-63-72"/></g>
+  </g>
+
+  <!-- PALMIERS, ARBUSTES, SOL -->
+  <g opacity=".68"><use href="#palm" transform="translate(465 820) scale(.83)"/><use href="#palm" transform="translate(690 842) scale(.65)"/><use href="#palm" transform="translate(1455 820) scale(.83)"/><use href="#palm" transform="translate(1230 842) scale(.65)"/><use href="#shrub" x="390" y="814"/><use href="#shrub" x="510" y="818"/><use href="#shrub" x="630" y="819"/><use href="#shrub" x="730" y="820"/><use href="#shrub" x="1455" y="814"/><use href="#shrub" x="1335" y="818"/><use href="#shrub" x="1215" y="819"/><use href="#shrub" x="1115" y="820"/></g>
+  <g fill="none" stroke="#446b82" stroke-width=".7" opacity=".32"><path d="M0 850h1920M0 885h1920M0 930h1920M0 982h1920M0 1040h1920"/><path d="M160 1080 780 827M360 1080 820 827M575 1080 865 827M790 1080 920 827M1130 1080 1000 827M1345 1080 1055 827M1560 1080 1100 827M1760 1080 1140 827"/></g>
+
+  <!-- FENÊTRE DE CODE -->
+  <g transform="translate(1495 620)">
+    <rect width="334" height="220" rx="10" fill="#0b1d2a" fill-opacity=".42" stroke="#5b849c" stroke-width="1"/>
+    <path d="M0 28h334" stroke="#5b849c" stroke-width=".8"/><circle cx="15" cy="14" r="4" fill="#6d91a6"/><circle cx="28" cy="14" r="4" fill="#7198ad"/><circle cx="41" cy="14" r="4" fill="#89a9ba"/>
+    <g fill="#608299" font-family="Consolas,'Courier New',monospace" font-size="11.5"><text x="12" y="52">01  def fibonacci_recursive(n):</text><text x="12" y="72">02      if n &lt;= 1:</text><text x="12" y="92">03          return n</text><text x="12" y="112">04      else:</text><text x="12" y="132">05          return fibonacci_recursive(n-1) +</text><text x="12" y="152">06                 fibonacci_recursive(n-2)</text><text x="12" y="182">08  n = int(input(&quot;n = &quot;))</text><text x="12" y="202">09  for i in range(n + 1): print(i)</text></g>
+  </g>
+
+  <!-- STRUCTURES DE DONNÉES -->
+  <g fill="none" stroke="#60839a" stroke-width="1" opacity=".72">
+    <!-- liste chaînée -->
+    <g transform="translate(1268 875)"><rect width="52" height="30"/><rect x="70" width="52" height="30"/><rect x="140" width="52" height="30"/><rect x="210" width="52" height="30"/><rect x="280" width="52" height="30"/><path d="M52 15h18M122 15h18M192 15h18M262 15h18M332 15h25" marker-end="url(#arrow)"/></g>
+    <!-- graphe -->
+    <g transform="translate(1310 960)"><circle cx="0" cy="20" r="11"/><circle cx="62" cy="64" r="11"/><circle cx="92" cy="15" r="11"/><circle cx="125" cy="73" r="11"/><circle cx="30" cy="91" r="11"/><path d="M9 27 53 57M69 55l17-30m15 0 18 38M72 69l43 2M39 83l16-14M10 30l17 51"/></g>
+    <!-- pile -->
+    <g transform="translate(1528 932)"><rect width="61" height="132"/><path d="M0 27h61M0 54h61M0 81h61M0 108h61"/><path d="M-45 23h37" marker-end="url(#arrow)"/></g>
+    <!-- cube réseau -->
+    <g transform="translate(1688 899)"><path d="M0 50 52 0l108 4 31 49-52 71-108-4Z"/><path d="M31 120 52 0m87 124 21-120M0 50l191 3M25 27l139 72M15 82 148-57"/><g fill="#3789b8" stroke="none"><circle cx="0" cy="50" r="2"/><circle cx="52" cy="0" r="2"/><circle cx="160" cy="4" r="2"/><circle cx="191" cy="53" r="2"/><circle cx="139" cy="124" r="2"/><circle cx="31" cy="120" r="2"/><circle cx="95" cy="52" r="2"/><circle cx="71" cy="91" r="2"/><circle cx="146" cy="70" r="2"/></g></g>
+  </g>
+  <g fill="#60839a" font-family="Consolas,'Courier New',monospace" font-size="12"><text x="1269" y="895">head</text><text x="1344" y="895">11</text><text x="1414" y="895">21</text><text x="1484" y="895">33</text><text x="1554" y="895">41</text><text x="1622" y="895">NULL</text><text x="1480" y="958">top</text><text x="1545" y="957">…</text><text x="1544" y="984">aₙ</text><text x="1544" y="1011">a₂</text><text x="1544" y="1038">a₁</text></g>
+</svg>
+
