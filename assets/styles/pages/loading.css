@@ -16,9 +16,10 @@
 
 .fsac-loader__logo {
     width: 30%;
+    animation: appear 1s both;
 }
 
-.fsac-loader__title {
+.fsac-loader__title,.intro-medium-avatar {
     font-size: calc(var(--font-title) * 3);
     line-height: .87;
     font-weight: 900;
@@ -26,20 +27,18 @@
     animation: appear 1s .3s both;
 }
 
-.fsac-loader__title span {
+.fsac-loader__title span,.intro-medium-avatar span {
     color: var(--font-seconde);
 }
 
 .fsac-loader__subtitle {
-    font-size: calc(var(--font-title) * 0.8);
-    font-size: var(--font-subtitle);
+    font-size: calc(var(--font-subtitle) * 0.8);
     color: var(--font-seconde);
     animation: appear 1s .4s both;
 }
 
 .fsac-loader__progress {
     width: min(80%, 420px);
-    margin-top: 3vh;
     animation: appear 1s .6s both;
 }
 
@@ -70,5 +69,10 @@
 @media (max-width: 768px) {
     .fsac-loader__logo {
         width: 65%;
+    }
+    .fsac-loader__content {
+        gap: 1vh;
+        width: 90%;
+        font-size: 12px;
     }
 }
