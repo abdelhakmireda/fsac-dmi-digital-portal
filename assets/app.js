@@ -2,22 +2,74 @@
 import './stimulus_bootstrap.js';
 import './styles/app.css';
 import './styles/pages/loading.css';
+import './styles/pages/chose-avatar.css';
+// import './styles/pages/vitrine.css';
 
-// Barre de chargement
-const bar = document.querySelector('[data-loading-bar]');
-const percent = document.querySelector('[data-loading-percent]');
+const app = document.querySelector('#fsac-app');
+const bar = app.querySelector('[data-loading-bar]');
+const percent = app.querySelector('[data-loading-percent]');
+const avatar = app.querySelector('.avatar-image');
+const buttons = app.querySelectorAll('[data-select-avatar]');
+const html = document.documentElement;
 
-if (bar && percent) {
-    const timer = setInterval(() => {
-        bar.value += 1;
+let timer;
+
+// NAVIGATION ENTRE LES COMPOSANTS
+function show(stage) {
+    clearInterval(timer);
+
+    app.querySelectorAll('[data-stage]').forEach(el => {
+        el.hidden = el.dataset.stage !== stage;
+    });
+
+    // Relancer l'animation d'apparition
+    const active = app.querySelector(`[data-stage="${stage}"]`);
+    active.classList.remove('stage-enter');
+    void active.offsetWidth;
+    active.classList.add('stage-enter');
+
+    if (stage !== 'loading') return;
+
+    // Réinitialiser et relancer le loading
+    bar.value = 0;
+    percent.textContent = '0%';
+
+    timer = setInterval(() => {
+        bar.value++;
         percent.textContent = `${bar.value}%`;
 
-        if (bar.value >= 100) clearInterval(timer);
+        if (bar.value >= 100) show('avatar');
     }, 30);
 }
 
-// Thème clair / sombre
-document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
-    const html = document.documentElement;
-    html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+// INTERACTIONS
+document.addEventListener('click', e => {
+    const go = e.target.closest('[data-go]');
+    if (go) show(go.dataset.go);
+
+    const theme = e.target.closest('[data-theme-toggle]');
+    if (theme) {
+        html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    }
+
+    const button = e.target.closest('[data-select-avatar]');
+    if (!button || !avatar || avatar.classList.contains('is-changing')) return;
+    if (button.getAttribute('aria-pressed') === 'true') return;
+
+    avatar.classList.add('is-changing');
+
+    setTimeout(() => {
+        const woman = button.dataset.selectAvatar === 'woman';
+        avatar.src = woman ? avatar.dataset.womanSrc : avatar.dataset.manSrc;
+        avatar.alt = woman ? 'Avatar étudiante FSAC' : 'Avatar étudiant FSAC';
+
+        buttons.forEach(b => {
+            b.setAttribute('aria-pressed', String(b === button));
+        });
+
+        avatar.classList.remove('is-changing');
+    }, 150);
 });
+
+// DÉMARRAGE
+show('loading');
