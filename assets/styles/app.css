@@ -2,7 +2,7 @@
     --background: radial-gradient(circle, #ffffffcc, #e7f0fb);
     --reflection: #1765b326;
     --card-bg: rgba(255, 255, 255, .75);
-    --input-bg: #ffffff;
+    --input-bg: #ffffffed;
     --border-color: #dce5f1;
     --image--bg: #fcfcfc;
 
@@ -10,6 +10,7 @@
 
     --font-color: #0a4a7a;
     --font-seconde: #64748b;
+    --font-seconde-title: rgb(172, 172, 172);
     --font-title-span: #8364e9;
 
     --font-title: clamp(28px, 5vw, 48px);
@@ -42,14 +43,21 @@
     --radius: 5%;
     --padding: 10%;
     --transition: 0.3s;
+    --ease: cubic-bezier(.2, 1, .3, 1);
 
     --shadow: 0 24px 64px rgba(29, 56, 110, .095);
-    --bg-art: url('../images/background-fsac-light.svg');
+    --bg-art: url('/images/background-fsac-light.svg');
     --bg-art-opacity: .28;
+    --avatar-halo: radial-gradient(circle, #f4f2ff, #dfe5ff);
+    --avatar-ring: #dde4f2;
 }
 
 /* Mode sombre */
 [data-theme="dark"] {
+
+    --avatar-halo: radial-gradient(circle, #3b406d, #262e55);
+    --avatar-ring: #344665;
+
     --background: radial-gradient(circle, #0f1b2a, #0f1b2a);
     --button-bg: linear-gradient(135deg, #287bc9, #634cdb);
     --button-hover: linear-gradient(135deg, #4393df, #785de9);
@@ -60,8 +68,9 @@
 
     --font-color: #64bafbf7;
     --font-seconde: #a2b4cb;
+    --font-seconde-title: rgba(212, 219, 235, 0.603);
     --shadow: 0 24px 70px rgba(0, 0, 0, .23);
-    --bg-art: url('../images/background-fsac-dark.svg');
+    --bg-art: url('/images/background-fsac-dark.svg');
     --bg-art-opacity: .30;
 }
 
@@ -188,9 +197,37 @@ body::before {
 }
 
 .fsac-loader__logo,
-.img.avatar-header {
+img.avatar-header {
     border-radius: 5%;
-    animation: appear 1s both;
     background: var(--image--bg);
-    padding: 1%;
+    padding: 0.5%;
+}
+
+.principale-button {
+    background: var(--button-bg);
+    color: var(--button-color);
+    border: 0;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform var(--transition) var(--ease), box-shadow var(--transition) var(--ease);
+}
+
+.principale-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+#fsac-app {
+    width: 100%;
+    min-width: 0;
+    margin: auto;
+}
+
+[data-stage][hidden] {
+    display: none !important;
+}
+
+.stage-enter {
+    animation: appear .6s var(--ease, ease) both;
 }
