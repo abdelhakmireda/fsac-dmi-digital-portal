@@ -131,8 +131,28 @@ body::before {
     z-index: -1;
 }
 
-main#fsac-app {
-    margin: auto;
+#fsac-app {
+    position: relative;
+    width: 100%;
+
+}
+
+[data-stage][hidden] {
+    display: none ;
+}
+
+/* Sortie de la page avatar */
+.stage-leave {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: stageOut .7s var(--ease) forwards;
+}
+
+/* Apparition de la vitrine */
+.stage-enter {
+    animation: stageIn .9s var(--ease) both;
 }
 /* Reflet du background */
 @keyframes reflection {
@@ -174,6 +194,26 @@ main#fsac-app {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+@keyframes stageOut {
+    to {
+        opacity: 0;
+        transform: translateX(-5%) scale(.97);
+        filter: blur(5px);
+    }
+}
+
+@keyframes stageIn {
+    from {
+        opacity: 0;
+        transform: translateX(5%) scale(1.02);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
     }
 }
 

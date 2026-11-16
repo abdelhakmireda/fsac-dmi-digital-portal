@@ -1,3 +1,17 @@
+/* Centrer toute la page Choix d'avatar */
+[data-stage="avatar"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100svh;
+    width: 100%;
+    padding: 2svh 0;
+}
+
+/* Respecter les sections masquées par JavaScript */
+[data-stage][hidden] {
+    display: none ;
+}
 section.avatar-container {
     color: var(--font-seconde);
     display: flex;
@@ -94,7 +108,7 @@ img.avatar-image::before {
 .avatar-image-container::before {
     content: "";
     position: absolute;
-    width: min(80%, 40svh);
+    width: min(80%, 38svh);
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--avatar-halo);
@@ -106,7 +120,7 @@ img.avatar-image::before {
 .avatar-image-container::after {
     content: "";
     position: absolute;
-    width: min(90%, 46svh);
+    width: min(90%, 42svh);
     aspect-ratio: 1;
     border: 2px dashed var(--avatar-ring);
     border-radius: 50%;
