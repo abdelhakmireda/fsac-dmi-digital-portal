@@ -19,7 +19,7 @@
     animation: appear 1s both;
 }
 
-.fsac-loader__title,.intro-medium-avatar {
+.fsac-loader__title,.chose-medium-title {
     font-size: calc(var(--font-title) * 3);
     line-height: .87;
     font-weight: 900;
@@ -27,7 +27,7 @@
     animation: appear 1s .3s both;
 }
 
-.fsac-loader__title span,.intro-medium-avatar span {
+.fsac-loader__title span,.chose-medium-title span {
     color: var(--font-seconde);
 }
 

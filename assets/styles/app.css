@@ -1,12 +1,13 @@
 :root {
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     --background: radial-gradient(circle, #ffffffcc, #e7f0fb);
     --reflection: #1765b326;
     --card-bg: rgba(255, 255, 255, .75);
     --input-bg: #ffffffed;
-    --border-color: #dce5f1;
+    --border-color: rgba(115, 143, 196, .25);
     --image--bg: #fcfcfc;
 
-    --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+
 
     --font-color: #0a4a7a;
     --font-seconde: #64748b;
@@ -63,8 +64,8 @@
     --button-hover: linear-gradient(135deg, #4393df, #785de9);
     --reflection: #57a6ff35;
     --card-bg: rgba(21, 34, 63, .80);
-    --input-bg: #152b45;
-    --border-color: #2d4561;
+    --input-bg: rgba(23, 39, 72, .94);
+    --border-color: rgba(134, 160, 217, .22);
 
     --font-color: #64bafbf7;
     --font-seconde: #a2b4cb;
@@ -130,7 +131,9 @@ body::before {
     z-index: -1;
 }
 
-
+main#fsac-app {
+    margin: auto;
+}
 /* Reflet du background */
 @keyframes reflection {
 
@@ -165,6 +168,15 @@ body::before {
     }
 }
 
+@keyframes wordFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -191,11 +203,6 @@ body::before {
     cursor: pointer;
 }
 
-.flex {
-    display: flex;
-    flex-direction: column;
-}
-
 .fsac-loader__logo,
 img.avatar-header {
     border-radius: 5%;
@@ -217,17 +224,4 @@ img.avatar-header {
 .principale-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
-}
-#fsac-app {
-    width: 100%;
-    min-width: 0;
-    margin: auto;
-}
-
-[data-stage][hidden] {
-    display: none !important;
-}
-
-.stage-enter {
-    animation: appear .6s var(--ease, ease) both;
 }
