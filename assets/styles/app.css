@@ -9,12 +9,13 @@
 
 
 
-    --font-color: #0a4a7a;
+    --font-color: #172648;
     --font-seconde: #64748b;
     --font-seconde-title: rgb(172, 172, 172);
     --font-title-span: #8364e9;
 
-    --font-title: clamp(28px, 5vw, 48px);
+    --font-title: clamp(28px, 5vw, 50px);
+    --font-weight-title: 800;
     --font-subtitle: clamp(20px, 3vw, 28px);
     --font-description: clamp(14px, 1.5vw, 16px);
 
@@ -41,14 +42,14 @@
     --neutral-color: #475569;
 
     /* Dimensions communes */
-    --radius: 5%;
-    --padding: 10%;
+    --radius: 30px;
+    --padding: clamp(30px, 3vw, 38px);
     --transition: 0.3s;
     --ease: cubic-bezier(.2, 1, .3, 1);
 
     --shadow: 0 24px 64px rgba(29, 56, 110, .095);
     --bg-art: url('/images/background-fsac-light.svg');
-    --bg-art-opacity: .28;
+    --bg-art-opacity: .20;
     --avatar-halo: radial-gradient(circle, #f4f2ff, #dfe5ff);
     --avatar-ring: #dde4f2;
 }
@@ -67,12 +68,12 @@
     --input-bg: rgba(23, 39, 72, .94);
     --border-color: rgba(134, 160, 217, .22);
 
-    --font-color: #64bafbf7;
+    --font-color: #e6efff;
     --font-seconde: #a2b4cb;
     --font-seconde-title: rgba(212, 219, 235, 0.603);
     --shadow: 0 24px 70px rgba(0, 0, 0, .23);
     --bg-art: url('/images/background-fsac-dark.svg');
-    --bg-art-opacity: .30;
+    --bg-art-opacity: .20;
 }
 
 *,
@@ -91,10 +92,20 @@ html {
 a {
     text-decoration: none;
     cursor: pointer;
+    color: var(--font-seconde);
 }
 
 li {
     list-style: none;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed var(--font-seconde-title);
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    width: 100%;
 }
 
 button,
@@ -138,7 +149,7 @@ body::before {
 }
 
 [data-stage][hidden] {
-    display: none ;
+    display: none;
 }
 
 /* Sortie de la page avatar */
@@ -154,6 +165,7 @@ body::before {
 .stage-enter {
     animation: stageIn .9s var(--ease) both;
 }
+
 /* Reflet du background */
 @keyframes reflection {
 
@@ -189,13 +201,17 @@ body::before {
 }
 
 @keyframes wordFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
 }
+
 @keyframes stageOut {
     to {
         opacity: 0;
@@ -210,10 +226,22 @@ body::before {
         transform: translateX(5%) scale(1.02);
         filter: blur(8px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0) scale(1);
         filter: blur(0);
+    }
+}
+
+/* Rotation continue */
+@keyframes avatarRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -231,18 +259,6 @@ body::before {
     }
 }
 
-[data-theme-toggle] {
-    position: fixed;
-    top: 3%;
-    right: 3%;
-    padding: 10px 15px;
-    background: var(--button-bg);
-    color: var(--button-color);
-    border: 0;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
 .fsac-loader__logo,
 img.avatar-header {
     border-radius: 5%;
@@ -255,8 +271,8 @@ img.avatar-header {
     color: var(--button-color);
     border: 0;
     font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 15px;
+    border-radius: var(--radius);
+    padding: 10px 14px;
     cursor: pointer;
     transition: transform var(--transition) var(--ease), box-shadow var(--transition) var(--ease);
 }
@@ -264,4 +280,67 @@ img.avatar-header {
 .principale-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow);
+}
+
+button.theme-switch,
+.icon-action,
+.button-left-hero {
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    display: inline-grid;
+    place-items: center;
+    color: var(--font-color);
+    transition: transform .3s var(--ease), background .3s;
+}
+
+button.theme-switch:hover,
+.icon-action:hover,
+.button-left-hero:hover {
+    transform: rotate(-12deg);
+    background: var(--avatar-halo);
+}
+
+.theme-switch__sun,
+.theme-switch__moon {
+    display: none;
+}
+
+/* Mode clair : soleil */
+html:not([data-theme="dark"]) .theme-switch__sun {
+    display: inline-block;
+}
+
+/* Mode sombre : lune */
+html[data-theme="dark"] .theme-switch__moon {
+    display: inline-block;
+}
+
+.title-left-hero-vitrine span {
+    background: linear-gradient(100deg, #416bf1 5%, #8364e9 59%, #13afb8 106%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    button.theme-switch,
+    .icon-action,
+    .button-left-hero {
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
 }
