@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-labelledby="title">
+  <title id="title">DMI Digital — symbole mathématiques et informatique</title>
+  <defs><linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2E67ED"/><stop offset="1" stop-color="#7951E8"/></linearGradient></defs>
+  <rect x="5" y="5" width="70" height="70" rx="17" fill="url(#gradient)"/>
+  <path d="M46 20 H21 L37.5 39 L21 58 H46" fill="none" stroke="#FFF" stroke-width="6.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M48 29 H56 V23 M48 42 H62 M48 54 H56 V60" fill="none" stroke="#B9F1FF" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="56" cy="20.5" r="3" fill="#B9F1FF"/><circle cx="65" cy="42" r="3" fill="#B9F1FF"/><circle cx="56" cy="62.5" r="3" fill="#B9F1FF"/>
+</svg>

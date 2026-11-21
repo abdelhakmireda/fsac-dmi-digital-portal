@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">DMI Digital — Mathématiques et Informatique</title>
+  <desc id="desc">Symbole Sigma représentant les mathématiques et circuits électroniques représentant l'informatique.</desc>
+  <defs>
+    <linearGradient id="dmi-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2E67ED"/>
+      <stop offset="1" stop-color="#7951E8"/>
+    </linearGradient>
+  </defs>
+  <!-- Icône mathématiques + informatique -->
+  <rect x="6" y="12" width="70" height="70" rx="17" fill="url(#dmi-gradient)"/>
+  <!-- Sigma, dessin géométrique plutôt que police -->
+  <path d="M47 27 H22 L38.5 46 L22 65 H47" fill="none" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- Circuit imprimé à droite du Sigma -->
+  <path d="M49 36 H57 V30 M49 49 H63 M49 61 H57 V67" fill="none" stroke="#B9F1FF" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="57" cy="27.5" r="3" fill="#B9F1FF"/>
+  <circle cx="66" cy="49" r="3" fill="#B9F1FF"/>
+  <circle cx="57" cy="69.5" r="3" fill="#B9F1FF"/>
+  <!-- Marque -->
+  <text x="93" y="49" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="800" letter-spacing="-0.9" fill="#172B53">DMI<tspan fill="#6257E9">.</tspan> DIGITAL</text>
+  <text x="94" y="70" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="0.15" fill="#677793">Mathématiques &amp; Informatique</text>
+</svg>
