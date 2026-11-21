@@ -1,17 +1,31 @@
 
 <!DOCTYPE html>
 <html lang="fr" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% block title %}FSAC DMI Digital{% endblock %}</title>
 
+    <link rel="icon"
+          type="image/svg+xml"
+          href="{{ asset('avatars/fsac/dmi-icon.svg') }}">
+
     {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% block importmap %}
+            {{ importmap('app') }}
+        {% endblock %}
     {% endblock %}
 </head>
+
 <body>
-    {% block body %}{% endblock %}
+
+    <main id="fsac-app">
+
+        {% block body %}{% endblock %}
+
+    </main>
+
 </body>
 </html>

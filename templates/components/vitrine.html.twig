@@ -1,11 +1,43 @@
+<header class="site-header">
+    <section class="header-vitrine container">
+        <button type="button" data-go="avatar">
+            Changer d'avatar
+        </button>
+        <section class="left-header-vitrine">
+            <a class="left-header-vitrine-brand" href="{{ path('app_home') }}">
+                <img class="brand-icon" src="{{ asset('/avatars/fsac/dmi-icon.svg') }}" alt="Logo DMI Digital">
+                <div class="brand-text-principale">
+                    <strong>DMI <span>Digital</span></strong>
+                    <small>Mathématiques & Informatique · FSAC</small>
+                </div>
+            </a>
+        </section>
 
-{% extends 'base.html.twig' %}
+        <section class="navbar-header-vitrine">
+            <a href="">Accueil</a>
+            <a href="">Département</a>
+            <a href="">Services</a>
+            <a href="">Suivi</a>
+        </section>
 
-{% block title %}DMI Digital | FSAC{% endblock %}
+        <section class="right-header-vitrine">
+            <button aria-label="Passer en mode sombre" class="theme-switch" data-theme-toggle type="button">
+                <span aria-hidden="true" class="theme-switch__sun">☀</span>
+                <span aria-hidden="true" class="theme-switch__moon">☾</span>
+            </button>
+            <button aria-label="Ouvrir le menu" class="theme-switch menu-toggle" type="button">☰</button>
+            <a class="principale-button" href="">Connexion ↗</a>
+        </section>
 
-{% block body %}
-    <main class="fsac-vitrine-page">
-        <h1>Bienvenue sur DMI Digital</h1>
-        <p>Département de Mathématiques et Informatique</p>
-    </main>
-{% endblock %}
+        <section class="mobile-menu" hidden>
+            <nav aria-label="Navigation mobile">
+                <button class="theme-switch menu-close" aria-label="Fermer le menu" type="button">X</button>
+                <a href="" aria-current="page">Accueil</a>
+                <a href="">Département</a>
+                <a href="">Services</a>
+                <a href="">Suivi</a>
+                <a href="">Connexion</a>
+            </nav>
+        </section>
+    </section>
+</header>

@@ -38,16 +38,6 @@ section.header-avatar-container {
     padding: 1svh 0px;
 }
 
-section.header-avatar-container button.theme-switch {
-    position: static;
-    background: transparent;
-    border-radius: 50px;
-    border: 2px solid var(--border-color);
-    padding: 6px 20px;
-    transition: transform .4s var(--ease), color .4s ease;
-    color: var(--font-seconde);
-    font-weight: 600;
-}
 .theme-switch__sun,
 .theme-switch__moon {
     display: none;
@@ -114,6 +104,7 @@ img.avatar-image::before {
     background: var(--avatar-halo);
     border: 1px solid var(--avatar-ring);
     z-index: -1;
+    
 }
 
 /* Deuxième cercle extérieur */
@@ -125,6 +116,7 @@ img.avatar-image::before {
     border: 2px dashed var(--avatar-ring);
     border-radius: 50%;
     z-index: -1;
+    animation: avatarRotate 25s linear infinite;
 }
 
 /* Image au premier plan */
@@ -231,7 +223,6 @@ section.footer-avatar-container {
 
     section.avatar-container {
         width: 95%;
-        height: 95vh;
     }
 
     section.medium-avatar-container {
@@ -248,7 +239,6 @@ section.footer-avatar-container {
     .avatar-switcher,
     .description-medium-avatar p {
         font-size: 9px;
-        width: 100%;
         text-align: center;
         font-weight: 600;
     }

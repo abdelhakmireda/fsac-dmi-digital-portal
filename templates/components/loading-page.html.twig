@@ -1,26 +1,38 @@
-
-<section class="fsac-loading-page">
-        <button type="button" data-theme-toggle>
-            Changer le thème
-        </button>
-        <section class="fsac-loader__content">
-            <img class="fsac-loader__logo" src="{{ asset('images/logo-fsac-officiel.svg') }}"
-                alt="Logo de la Faculté des Sciences Aïn Chock">
-
-            <h1 class="fsac-loader__title">
-                D<span>M</span>I
-            </h1>
-
-            <p class="fsac-loader__subtitle">
-                Département de Mathématiques et Informatique
-            </p>
-            <section class="fsac-loader__progress">
-                <progress class="fsac-loader__bar" value="0" max="100" data-loading-bar>0%</progress>
-
-                <div class="fsac-loader__meta">
-                    <span data-loading-label>CHARGEMENT</span>
-                    <output data-loading-percent>0%</output>
-                </div>
+    <section class="fsac-loading-page">
+        <section class="header-vitrine container">
+            <section class="left-header-vitrine">
+                <a class="left-header-vitrine-brand" href="{{ path('app_home') }}">
+                    <img class="brand-icon" src="{{ asset('/avatars/fsac/dmi-icon.svg') }}" alt="Logo DMI Digital">
+                    <div class="brand-text-principale">
+                        <strong>DMI <span>Digital</span></strong>
+                        <small>Mathématiques & Informatique · FSAC</small>
+                    </div>
+                </a>
             </section>
- </section>
+            <section class="right-header-vitrine">
+                <button aria-label="Passer en mode sombre" class="theme-switch" data-theme-toggle type="button">
+                    <span aria-hidden="true" class="theme-switch__sun">☀</span>
+                    <span aria-hidden="true" class="theme-switch__moon">☾</span>
+                </button>
+            </section>
+        </section>
+        <section class="fsac-loader__content">
+            <section class="logo-loading">
+                <img class="fsac-loader__logo" src="{{ asset('/images/logo-fsac-officiel.svg') }}" alt="Logo FSAC">
+                    <div class="dmi-logo-container">
+                    <img class="brand-icon" src="{{ asset('/avatars/fsac/dmi-icon.svg') }}" alt="Logo DMI Digital">
+                    <div class="brand-text-principale">
+                        <strong>DMI <span>Digital</span></strong>
+                        <small>Mathématiques & Informatique · FSAC</small>
+                    </div>
+                    </div>
+            </section>
 
+            <p class="fsac-loader__subtitle">La transformation digitale commence ici</p>
+
+            <svg class="loader-ring" viewBox="0 0 60 60" role="status" aria-label="Chargement en cours">
+                <circle cx="30" cy="30" r="26" class="loader-ring__track" />
+                <circle cx="30" cy="30" r="26" class="loader-ring__bar" />
+            </svg>
+        </section>
+    </section>

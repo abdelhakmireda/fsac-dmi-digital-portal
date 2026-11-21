@@ -1,0 +1,137 @@
+.site-header {
+    width: 100vw;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    text-transform: capitalize;
+    height: max-content;
+}
+
+section.header-vitrine {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 0;
+}
+
+section.navbar-header-vitrine {
+    display: flex;
+    gap: 2vw;
+}
+
+section.navbar-header-vitrine a {
+    font-weight: 650;
+    font-size: .85rem;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+    transition: color .25s, border-color .25s, transform .25s;
+}
+
+section.navbar-header-vitrine a:hover {
+    border-color: var(--font-title-span);
+    transform: translateY(-1px);
+}
+
+a.left-header-vitrine-brand,
+section.right-header-vitrine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+img.brand-icon {
+    max-height: 5vh;
+}
+
+.brand-text-principale {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text-principale strong {
+    font-weight: 850;
+    letter-spacing: -.035em;
+    font-size: 1.07rem;
+    color: var(--font-color);
+}
+
+.brand-text-principale span {
+    background: var(--button-bg);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 11;
+    background-color: #2828304d;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.mobile-menu nav {
+    position: relative;
+    /* pour positionner le X dedans */
+    font-size: 16px;
+    padding: 20px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    display: grid;
+    font-weight: 800;
+    width: 80%;
+    max-width: 400px;
+}
+
+.menu-toggle {
+    display: none;
+    /* caché sur desktop */
+}
+
+.mobile-menu[hidden] {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .brand-text-principale small,
+    .navbar-header-vitrine a {
+        display: none;
+    }
+
+    .site-header {
+        font-size: 10px;
+    }
+
+
+    nav a {
+        border-top: 1px solid var(--font-seconde-title);
+        padding: 1vh 0;
+    }
+
+    nav a:nth-child(2) {
+        border: none;
+    }
+
+    nav button.theme-switch {
+        position: absolute;
+        left: 88%;
+        top: 1%;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+}
